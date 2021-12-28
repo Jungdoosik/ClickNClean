@@ -13,12 +13,11 @@
     <link rel="stylesheet" href="/assets/css/docs.min.css">
     <!-- jQuery 라이브러리 -->
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    
+     <link rel="stylesheet" href="/assets/css/header.css">
+     <link rel="stylesheet" href="/assets/css/footer.css">
 </head>
 <body>
-<%
-  HeadOffice ho = (HeadOffice)request.getAttribute("ho");
-%>
+
 
 
 <style>
@@ -34,40 +33,7 @@
         margin: 0 auto;
         
     }
-        /*헤더 부분 */
-        #header{
-            width: 100%;
-            height: 70px;
-        }
-         #logo{
-            width: 300px;
-            height: 100%;
-            border: 1px solid black;
-            display: inline-block;
-            float: left;
-            left: 100px;
-        }
-         
-        #menu{
-            width: 160px;
-            height: 100%;
-            display: inline-block;
-            float: left;
-            border: 1px solid black;
-        }
-        #adminpage{
-             width: 1344px;
-            height: 120px;
-             margin: 0 auto;
-           
-        }
-         #adminpageFont{
-            position: relative;
-            font-size : 35px;
-            top : 38px;
-            left: 580px;
-            color: #555;
-        }
+ 
         /* 메뉴 바 */
            #navigator {
             height: 67px;
@@ -186,114 +152,11 @@
         top: -449px;
       }
     
-    /*footer*/
-    #footer {
-      
-        width: 100%;
-        height: 302px;
-        background-color: #E6E6E6;
-    }
-
-    #caution {
-        border-top: 1px solid #D9D9D9;
-        border-bottom: 1px solid #D9D9D9;
-        width: 100%;
-        height: 70px;
-        color: #666;
-
-
-    }
-
-    #caution>p {
-        text-align: center;
-        line-height: 70px;
-        font-weight: 600;
-    }
-
-    #footer_inner {
-        padding-top: 20px;
-
-        width: 100%;
-        height: 232px;
-    }
-
-    #footer_inner_center {
-        
-        width: 1344px;
-        height: 100%;
-        margin: 0 auto;
-    }
-
-    #footer_inner_left {
-        
-        font-weight: bold;
-        width: 26%;
-        height: 100%;
-        padding-left: 83.52px;
-        float: left;
-    }
-
-    #footer_inner_left span {
-        font-size: 20px;
-        color: #666;
-    }
-
-    #footer_inner_left a {
-
-        font-size: 25px;
-        color: black;
-        text-decoration: none;
-        display: block;
-        height: 30px;
-        padding: 10px 0;
-    }
-
-    #footer_inner_right {
-        
-        width: 74%;
-        height: 100%;
-        float: left;
-    }
-
-    #busyInfo {
-        color: #666;
-        font-weight: bold;
-        font-size: 13px;
-        float: left;
-        padding-left: 83.52px;
-    }
-
-    #busyInfo>p:first-child {
-        font-size: 20px;
-        color: #666;
-    }
-
-    #footer_inner_right ul {
-        float: right;
-        display: inline-block;
-        width: 250px;
-        padding-left: 50px;
-        list-style: none;
-    }
-
-    #footer_inner_right ul li {
-        margin-bottom: 20px;
-        width: 100%;
-    }
-
-    #footer_inner_right ul li a {
-        text-decoration: none;
-        color: #666;
-        font-weight: bold;
-    }
 
 </style>
-
+	<jsp:include page="/views/commons/header.jsp" />
     <div id="wrap">
-<div id="header">
-            <div id="logo">
-          </div>
-        </div>
+
          
           <div id="adminpage">
             <span id="adminpageFont">관리자 페이지</span>
@@ -304,7 +167,7 @@
                             <li><a href="">Home</a></li>
                             <li><a href="">관리자 계정</a></li>
                             <li><a href="">전체 업체 LIST</a></li>
-                            <li><a href="">전체 회원 LIST</a></li>
+                            <li><a href="/admin/memberAllList.do">전체 회원 LIST</a></li>
                             <li><a href="">게시판 관리</a>
                             <ul class="sub">
                                 <li><a href="">sub</a></li>
@@ -339,19 +202,19 @@
                     <tbody>
                         <tr>
                             <th>사이트 명</th>
-                            <td><%=ho.getSiteName() %></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <th>사이트 URL</th>
-                            <td><%=ho.getSiteUrl() %></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <th>사업자 등록번호</th>
-                            <td><%=ho.getBusNum() %></td>
+                            <td></td>
                         </tr>
                         <tr>
                             <th>업체 주소</th>
-                            <td><%=ho.getAddress() %></td>
+                            <td></td>
                         </tr>
                   
                     </tbody>

@@ -1,3 +1,6 @@
+<%@page import="kr.or.iei.review.model.vo.Review"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="kr.or.iei.company.model.vo.Company"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -22,7 +25,10 @@
 </style>
 
 <body id="bodycss">
-	
+	<%
+		Company com=(Company)request.getAttribute("com");
+	ArrayList<Review> list=(ArrayList<Review>)request.getAttribute("list");
+	%>
     <jsp:include page="/views/commons/header.jsp" />
     <div id="contentArea">
         <div class="contentHead">
@@ -48,26 +54,33 @@
             </div>
             <div id="companyCleanType">
             	가능한 청소 종류<br>
-            <div class="companyCleanType" style="margin-left: 35px">입주청소</div>
-            <div class="companyCleanType">이사청소</div>
-            <div class="companyCleanType">부분청소</div>
+            	<%
+            		String [] str=com.getCleanType().split(",");
+            		
+            	%>
+            <div class="companyCleanType" style="margin-left: 35px"><%=str[0] %></div>
+            <%for(int i=1;i<str.length;i++){ %>
+            <div class="companyCleanType"><%=str[i] %></div>
+            <%} %>
+            
+            
             </div>
             
             
             
             
-            <div id="companyReview">
+            <%-- <div id="companyReview">
                 <span id="review">리뷰</span>
+                <%for(Review r:list){ %>
                 <div class="reviewArea">
-                <span style="font-weight:bold;">서울시 동작구 / 이사청소 / 별점</span>
+                <span style="font-weight:bold;"><%=r.getArea() %> / <%=r.getCleanType() %> / <%=r.getScore() %></span>
                 <hr>
-                너무 너무 좋았습니다.<br>
-                전문가 짱!
+			    <%=r.getContent() %>
                 </div>
-                
+                <%} %>
             </div>
-        </div>
-
+        </div> --%>
+ 
     </div>
     	<div id="footer">
 		<div id="caution">

@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<<<<<<< HEAD
 <title>관리자 페이지 메인</title>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <link
@@ -25,12 +24,10 @@
 
 </style>
 <body>
+	<jsp:include page="/views/commons/header.jsp" />
     <div id="wrap">
     
-	<div id="header">
-            <div id="logo">
-          </div>
-        </div>
+	
           <div id="adminpage">
             <span id="adminpageFont">관리자 페이지</span>
             </div>    
@@ -40,7 +37,7 @@
                             <li><a href="">Home</a></li>
                             <li><a href="">관리자 계정</a></li>
                             <li><a href="">전체 업체 LIST</a></li>
-                            <li><a href="/views/admin/memberAllList.jsp">전체 회원 LIST</a></li>
+                            <li><a href="/admin/memberAllList.do">전체 회원 LIST</a></li>
                             <li><a href="">게시판 관리</a>
                             <ul class="sub">
                                 <li><a href="">sub</a></li>
