@@ -15,9 +15,14 @@ html {
    height: 1000px;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d5d0fd2854348823739179368d3969a354511cac
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -25,6 +30,13 @@ html {
    width: 40%;
    height: 100%;
    float: left;
+=======
+
+#navi {
+	width: 40%;
+	height: 100%;
+	float: left;
+>>>>>>> d5d0fd2854348823739179368d3969a354511cac
 }
 
 #navi-ul {

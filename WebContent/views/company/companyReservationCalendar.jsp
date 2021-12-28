@@ -94,9 +94,13 @@ table td:hover {
 
 </head>
 <body>
+<<<<<<< HEAD
 
 	<jsp:include page="/views/company/cheader.jsp" />
 
+=======
+
+<jsp:include page="/views/company/cheader.jsp" />
 		<div id="content">
 
 			<div id="datepicker"></div>
@@ -174,9 +178,6 @@ table td:hover {
 	</div>
 
 
-
-
-	<script src="/assets/js/companyReservationCalendarScript.js"></script>
 
 
 
