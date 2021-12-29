@@ -51,7 +51,7 @@
 <body>
    <script>
                         
-      $(document).ready(function(){
+      $(document).ready(function(){ 
                                  
          $.ajax({
             url: "/review/selectReviewForMain.do",
