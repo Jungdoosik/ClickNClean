@@ -45,7 +45,7 @@ public interface BoardService {
 			 * @Date : 2021-12-29
 			 * @subscription : 게시물 삭제할 때 사용하는 메소드
 			 */
-		int boardDelete(int boardNo);
+		
 		
 
 }
