@@ -96,7 +96,7 @@ public class BoardDAO {
       ResultSet rset = null;
          
       int count = 0;
-      String query = "select count(*) as count from board where boardtype='user'";
+      String query = "select count(*) as count from board where boardtype='user' and end_YN='N'";
          
       
       try {

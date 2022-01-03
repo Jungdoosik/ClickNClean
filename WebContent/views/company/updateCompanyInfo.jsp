@@ -21,7 +21,7 @@
 		alert('업데이트실패 - 지속적인 문제 발생시 관리자에 문의바랍니다.')
 	  	
 	<%} %>
-	location.replace('/co/coMemberAllList.do');
+	location.replace('/views/company/companyMain.jsp');
 	</script>
 </body>
 </html>
