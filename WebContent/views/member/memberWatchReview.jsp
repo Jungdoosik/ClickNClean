@@ -133,7 +133,7 @@
             position: relative;
             font-size: 35px;
             top: 38px;
-            left: 580px;
+            left: 595px;
             color: #555;
         }
 
@@ -167,7 +167,7 @@
 
         #gnb li {
             float: left;
-            width: 25%;
+            width: 33.3%;
             height: 100%;
             list-style-type: none;
             text-align: center;
@@ -220,7 +220,7 @@
             font-size: 30px;
             position: relative;
             top: 46px;
-            left: 335px;
+            left: 343px;
             color: #555;
         }
 
@@ -321,7 +321,7 @@
         #content3 {
             width: 500px;
             height: 620px;
-            margin: 0 auto;
+            margin: 0 155px;
             border: 2px solid #0E76B3;
             border-radius: 5px;
         }
@@ -345,24 +345,29 @@
         textarea {
             border: 2px solid rgba(14, 118, 179, 0.2);
             border-radius: 5px;
+            margin-top : 30px;
+            padding- top : 20px;
         }
 
         #complete {
             float: left;
             position: relative;
             left: 120px;
+            top : -13px;
         }
 
         #list {
             float: left;
             position: relative;
             left: 140px;
+            top : -13px;
         }
 
         #clear {
             float: left;
             position: relative;
             left: 160px;
+            top : -13px;
         }
 
 
@@ -571,7 +576,6 @@
                     <li><a href="/views/member/memberPwdCheck.jsp">개인정보수정</a></li>
                      <li><a href="/member/memberCheck.do">나의 견적서</a></li>
                      <li><a href="/review/reservationList.do">이용내역</a></li>
-                     <li><a href="">설정</a></li>
                 </ul>
             </div>
         </div>
@@ -634,7 +638,9 @@
                         	<input type="hidden" name="contractNo" value="<%=r.getContractNo() %>"/>
                         	<input type="hidden" name="reviewNo" id="reviewNo" value="<%=r.getReviewNo() %>"/>
                         	<input type="hidden" name="currentPage" value="<%=currntPage %>"/>
-                            <input type="text" id="contentArea" style="resize:none;" disabled='true' name="content" value="<%=r.getContent() %>"></input>
+                           
+                           <textarea rows="3" cols="3" id="contentArea" disabled='true' name="content"><%=r.getContent() %></textarea>
+                            
                             <br><br>
                             <input type="button" id="complete" onclick="return completeBtn();" value="수정" class="btn rounded " style="border: 1px solid #0E76B3; color: #0E76B3;" />
                             <input type="button" id="list" value="목록" class="btn rounded " style="background-color:#0E76B3; color: white" onclick="location.replace('/review/reviewList.do');" />

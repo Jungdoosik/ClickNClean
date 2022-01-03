@@ -1,8 +1,6 @@
 package kr.or.iei.company.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,10 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import kr.or.iei.company.model.vo.Company;
-import kr.or.iei.contract.model.vo.Contract;
 
 /**
  * Servlet implementation class CoConditionSpanServlet

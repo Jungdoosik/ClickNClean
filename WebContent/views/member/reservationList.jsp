@@ -120,7 +120,7 @@
             position: relative;
             font-size : 35px;
             top : 38px;
-            left: 580px;
+            left: 595px;
             color: #555;
         }
         /* 메뉴 바 */
@@ -149,7 +149,7 @@
         }
         #gnb li {
             float: left;
-            width: 25%;
+            width: 33.3%;
             height: 100%;
             list-style-type: none;
             text-align: center;
@@ -210,7 +210,7 @@
             width: 50%;
             height: 30px;
             position: relative;
-            left: 140px;
+            left: 303px;
             top: 0px;
         }
     #select{
@@ -427,6 +427,10 @@
         color: #666;
         font-weight: bold;
     }
+    #page{
+    	
+    	 text-decoration-line : none;
+    }
         
     </style>
 </head>
@@ -451,7 +455,6 @@
                            <li><a href="/views/member/memberPwdCheck.jsp">개인정보수정</a></li>
                             <li><a href="/member/memberCheck.do">나의 견적서</a></li>
                             <li><a href="/review/reservationList.do">이용내역</a></li>
-                            <li><a href="">설정</a></li>
                         </ul>
             </div>
          </div> 
@@ -518,13 +521,13 @@
                        <%} %>
                       </div>
                   </div>
-                    </div>
-                
-                <!-- 페이지 네비 로직-->
-                 <div id="pageNavi"><%=pageNavi %></div>
+                    
                   
                   <%} %>
+                </div>
                 
+                <!-- 페이지 네비 로직-->
+                 <div id="pageNavi"><span id="page"><%=pageNavi %></span></div>
                   
           
                   <%}else{ %>

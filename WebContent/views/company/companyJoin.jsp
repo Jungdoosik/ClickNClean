@@ -7,14 +7,21 @@
 <title>Insert title here</title>
 <!--JQuery CDM-->
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
 <!-- css -->
-<link href="/assets/css/companyJoin.css?after" rel="stylesheet" type="text/css" />
+<link href="/assets/css/companyJoin.css?aftder" rel="stylesheet" type="text/css" />
+<link href="/assets/css/footer.css" rel="stylesheet" type="text/css" />
+ <link href="/assets/css/header.css" rel="stylesheet" type="text/css"/>
 <!-- 다음주소 API -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 <body>
     <div id="wrap">
-        <div id="header"></div>
+       <jsp:include page="/views/commons/header.jsp" />
         <div id="content">
             <div id="content_inner">
                 <div id="join_form">
@@ -717,7 +724,7 @@
                 </div>
             </div>
         </div>
-        <div id="footer"></div>
+        <jsp:include page="/views/commons/footer.jsp" />
 
     </div>
 </body>

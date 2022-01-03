@@ -26,7 +26,7 @@
         #wrap{
             width: 100%;
             margin: 0 auto;
-            background-color: #fafafa;
+           /*background-color: #fafafa; */
         }
         /*헤더 부분 */
            #header {
@@ -135,7 +135,7 @@
             position: relative;
             font-size : 35px;
             top : 38px;
-            left: 580px;
+            left: 595px;
             color: #555;
         }
         /* 메뉴 바 */
@@ -164,7 +164,7 @@
         }
         #gnb li {
             float: left;
-            width: 25%;
+            width: 33.3%;
             height: 100%;
             list-style-type: none;
             text-align: center;
@@ -230,10 +230,9 @@
         width: 650px;
         height: 80px;
         margin: 25px auto;
+        box-shadow: 0px 3px 6px rgb(0 0 0/ 16%);
     }
-        table{
-            margin: 22px auto;
-        }
+      
         
       #cleanType>{
       		width : 70px;
@@ -380,6 +379,37 @@
         font-weight: bold;
     }
         
+        
+    #table{
+    	width : 80%;
+    	height: 100%;
+    	float : left;
+    	text-align : left;
+    	
+    } 
+    table{
+    	margin : 24px 0 0 30.4px;
+    }
+    table tr{
+    	text-align : left;
+    	    }
+	table tr td {
+		line-height : 76px;
+		
+	}   
+   
+    #btn{
+   	 width : 20%;
+    height: 100%;
+    float : left;
+    
+    
+    }
+   
+    
+    .btn{
+    margin-top : 19px;
+    }
     </style>
 </head>
 <body>
@@ -411,7 +441,6 @@
                             <li><a href="/views/member/memberPwdCheck.jsp">개인정보수정</a></li>
                             <li><a href="/member/memberCheck.do">나의 견적서</a></li>
                             <li><a href="/review/reservationList.do">이용내역</a></li>
-                            <li><a href="">설정</a></li>
                         </ul>
             </div>
          </div> 
@@ -435,14 +464,14 @@
                     <%for(Contract c : list){ %>
                     
                     <div  class="rounded estimate">
-                      
-                            <table>
+                    	<div id="table">
+                    		<table>
                                 <tr>
-                                    <td id="td1"><h5><%=c.getCleanType() %> /</h5></td>
+                                    <td  class="part" id="td1"><h5><%=c.getCleanType() %> /</h5></td>
                                     <td class="part"><h5><%=c.getHouseType() %> <%=c.getHouseSize() %> / </h5></td>
                                     <td class="part"><h5><%=c.getArea() %> / </h5></td>
                                     <td class="part"><h5><%=c.getReqDate() %></h5></td>
-                                    <td style="color: white">ssssssss</td>
+                                  
                                     <!-- 견적 리스트 페이지 연결 로직-->
                                     
                              <form action="/contract/selectConditionCompany.do" method="post">
@@ -461,12 +490,21 @@
                             		<input type="hidden" name="conditionNo" value="<%=c.getConditionNo() %>"/>
                             		<input type="hidden" name="houseSize" value="<%=c.getHouseSize() %>"/>
                             		
-                                    <td id="td2"><input type="submit" value="견적리스트" class="btn btn-outline-primary" style="background-color:#0E76B3; color: white;"></td>
+                                    
                             
                              </form>
                                 </tr>
                                 
                             </table> 
+                    	
+                    	
+                    	</div>
+                    	<div id="btn">
+                    	<input type="submit" value="견적리스트" class="btn btn-outline-primary" style="background-color:#0E76B3; color: white;">
+                    	
+                    	</div>
+                      
+                            
                       
                     </div>
                     <%} %>

@@ -129,7 +129,7 @@
             position: relative;
             font-size : 35px;
             top : 38px;
-            left: 580px;
+            left: 595px;
             color: #555;
         }
         /* 메뉴 바 */
@@ -158,7 +158,7 @@
         }
         #gnb li {
             float: left;
-            width: 25%;
+            width: 33.3%;
             height: 100%;
             list-style-type: none;
             text-align: center;
@@ -197,27 +197,16 @@
         }
         .input{
            line-height: 40px;
+           
         }
         .txt_guide{
-            height: 40px;
-            margin-bottom: 0px;
+     
+            margin: 5px 0 0 15px;
             font-size: 11px;
-            display: block;
-            position: relative;
-            top: -10px;
-            left: 170px;
             display: none;
+    
         }
-        .re_txt_guide{
-             height: 5px;
-            margin-bottom: 0px;
-            font-size: 11px;
-            display: block;
-            position: relative;
-            top: -10px;
-            left: 170px;
-            display: none;
-        }
+        
         .mypage-td{
             width : 170px;
             height : 80px;
@@ -243,7 +232,7 @@
              position: relative;
              height: 45px;
              width: 120px;
-             left: 20px;
+             left: 5px;
             top: 24px;
         }
         .mypageReset{
@@ -251,13 +240,13 @@
             position: relative;
             height: 45px;
             width: 130px;
-            left: 30px;
+            left: 10px;
             top: 24px;
         }
         .cancle{
            display: inline-block;
             position: relative;
-            left: 40px;
+            left: 15px;
             height: 45px;
             width: 90px;
             top: 24px;
@@ -391,7 +380,7 @@
                             <li><a href="/views/member/memberPwdCheck.jsp">개인정보수정</a></li>
                             <li><a href="/member/memberCheck.do">나의 견적서</a></li>
                             <li><a href="/review/reviewList.do">이용내역</a></li>
-                            <li><a href="">설정</a></li>
+                           
                         </ul>
             </div>
          </div> 
@@ -418,31 +407,25 @@
                     <tr>
                         <td class="mypage-td"><span>새 비밀번호</span></td>
                         <td>
-                            <input type="password" name="newPwd" size="35" onclick="guideCheck()" class="input border border-#CCC rounded" style="text-align: center"/>
+                            <input type="password" name="newPwd" size="35" onclick="guideCheck()" class="input_txt input border border-#CCC rounded" style="text-align: center"/>
+                      		<p class="txt_guide">
+	                            <span id="pwdCount">* 10자 이상 입력</span><br>
+	                            <span id="combi">* 영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합</span><br>
+                       		 </p>
+                      
                         </td>
                     </tr>
-                    <tr>
-                        <td colspan="2">
-                         <p class="txt_guide">
-                            <span id="pwdCount">* 10자 이상 입력</span><br>
-                            <span id="combi">* 영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합</span><br>
-                            <span id="three">* 동일한 숫자 3개 이상 연속 사용 불가</span>
-                        </p>
-                        </td>
-                    </tr>
+                   
                     <tr>
                         <td class="mypage-td" style="text-align: center"><span>새 비밀번호 확인</span></td>
                         <td>
-                            <input type="password" name="newPwd_re" size="35" onclick="guideCheckRE()" class="input border border-#CCC rounded" style="text-align: center" />
+                            <input type="password" name="newPwd_re" size="35" onclick="guideCheckRE()" class="input_txt input border border-#CCC rounded" style="text-align: center" />
+                        	 <p class="txt_guide">
+                           		 <span id="pwdCheck">* 동일한 비밀번호를 입력해주세요</span><br>
+                      		 </p>
                         </td>
                     </tr>
-                    <tr>
-                        <td colspan="2">
-                         <p class="re_txt_guide">
-                            <span>* 동일한 비밀번호를 입력해주세요</span><br>
-                        </p>
-                        </td>
-                    </tr>
+                  
                     <tr>
                   	  <td class="mypage-td" style="text-align: center"><span>이름</span></td>
                         <td>
@@ -460,9 +443,7 @@
                         <td>
                             <input type="text" name="phone" value="<%=m.getPhone() %>" size="35" class="input border border-#CCC rounded" style="text-align:center; font-size:15px;"/>
                         </td>
-                        <td id="phone">
-                            <input type="button" value="다른 번호 인증" class="btn btn-outline-primary" />
-                        </td>
+                        
                     </tr>
                     <tr id="btnPart">
                         <td id="withBtn" colspan="4"> 
@@ -528,22 +509,62 @@
     
     
     <script>
-        function guideCheck(){
-          
-            $('.txt_guide').css('display','block');
-            
-            var pwd = $('.newPwd').val();
-            
-            if(pwd.length > 9){
-            	
-            	$('#pwdCount').html().css('color','#00994C');
-            }
-        };
-        
-        function guideCheckRE(){
-            
-            $('.re_txt_guide').css('display','block');
-        };
+    <%-- 작성 가이드 오픈--%>
+	$('.input_txt').focus(function(){
+		
+		$.each($(this),function(index,item){
+			$.each($(item).next(),function(index,item){
+				if($(item).attr('class')=='txt_guide'){
+					$(this).css('display','block');
+				}
+			});
+		});
+		
+	});  
+	
+	<%-- PWD 유효성 검사 --%>
+	$('input[name=newPwd]').keyup(function(){
+		
+		var data=$(this).val();
+		
+		<%--길이--%>
+		if(data.length>=8 && data.length<=16){
+			$('#pwdCount').css('color','#0f851a');
+		}else{
+			$('#pwdCount').css('color','#b3130b');
+		}
+		
+		<%--조합--%>
+		var check=RegExp(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}$/);
+		
+		if(check.test(data)){
+			$('#combi').css('color','#0f851a');
+			
+			
+		}else{
+			$('#combi').css('color','#b3130b');
+			
+		}
+		
+		
+	});
+	
+	<%-- PWD PWD_RE 동일 유효성 검사 --%>
+	$('input[name=newPwd_re]').keyup(function(){
+		var data=$(this).val();
+		var pwd=$('input[name=newPwd]').val();
+		
+		if(data==pwd){
+			$('#pwdCheck').css('color','#0f851a');
+		}else{
+			$('#pwdCheck').css('color','#b3130b');
+		}
+	});
+    
+    
+    
+    
+    
         
         function withDraw() {
             
@@ -557,7 +578,6 @@
         };
         
         function myPageReset(){
-        	 
 
         	var frm = document.frmUpdate;
         		frm.action = "/member/memberUpdate.do";

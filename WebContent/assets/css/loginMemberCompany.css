@@ -3,9 +3,9 @@
    * {
         box-sizing: border-box;
         font-family: 'NanumSquare';
-        color: #555;
+        /* color: #555;
         font-size: 16px;
-        background-color: #fafafa;
+        background-color: #fafafa; */
     }
 
     #wrap {
